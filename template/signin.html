@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>LOGIN</h1>
+<form action="" method="POST">
+    {% csrf_token %}
+    <br>
+    Username
+    <input type="text" name="username" id="username" placeholder="Enter username">
+    <br>
+    Password
+    <input type="password" name="Password" id="Password">
+    <br>
+    <button type="submit">Login</button>
+</form>
+{% for messages in messages %} 
+   <div class="alert alert-success">
+      <a class="close" href="#" data-dismiss="alert">invalid user or password</a>
+      {{ message }}
+   </div>
+{% endfor %}
+{% endblock %}
+
